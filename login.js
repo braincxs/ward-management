@@ -31,7 +31,7 @@ if (isAdmin || existingUser) {
       
 
       setTimeout(() => {
-        window.location.href = "/home.html"; 
+        window.location.href = "./home.html"; 
       }, 1000);
       
     } else {
