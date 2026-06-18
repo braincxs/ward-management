@@ -1,183 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Error 404</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scribe - Messy Edition</title>
+<style>
+    /* variables but short */
+    :root{--p:#2a2185;--pl:#3f33ba;--bg:#f4f7fe;--s:#fff;--tm:#1e293b;--tm2:#64748b;--b:#e2e8f0;--st:#10b981;--stb:#d1fae5;--cr:#ef4444;--crb:#fee2e2;--wb:#e2e8f0;--wbt:#475569;}
+    *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
+    body{background:var(--bg);color:var(--tm);display:flex;height:100vh;overflow:hidden;}
+    
+    /* sb = sidebar */
+    .sb{width:260px;background:var(--p);color:#fff;display:flex;flex-direction:column;transition:.3s;}
+    .sb.c{width:70px;}
+    .sb-h{padding:24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.1);}
+    .sb-h h2{font-size:1.2rem;white-space:nowrap;transition:.3s;}
+    .sb.c .sb-h h2{opacity:0;pointer-events:none;}
+    
+    /* nl = nav links */
+    .nl{list-style:none;padding-top:20px;}
+    .nl li{padding:10px 20px;cursor:pointer;display:flex;align-items:center;gap:15px;opacity:.8;transition:.2s;white-space:nowrap;}
+    .nl li:hover,.nl li.act{opacity:1;background:var(--pl);border-left:4px solid #fff;}
+    .divr{height:1px;background:rgba(255,255,255,.1);margin:10px 20px;}
+
+    /* mc = main content */
+    .mc{flex-grow:1;display:flex;flex-direction:column;overflow-y:auto;}
+    .top{background:var(--s);padding:15px 30px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.02);}
+    .tgl{background:none;border:none;font-size:1.5rem;color:var(--tm);cursor:pointer;}
+    .btn-a{background:var(--p);color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer;transition:.2s;}
+    .btn-a:hover{background:var(--pl);}
+
+    /* dsh = dashboard */
+    .dsh{padding:30px;max-width:1200px;margin:0 auto;width:100%;}
+    .d-hdr{margin-bottom:25px;display:flex;justify-content:space-between;align-items:flex-end;}
+    .d-hdr h1{font-size:1.8rem;}
+    .d-hdr p{color:var(--tm2);margin-top:5px;}
+
+    /* cd = card */
+    .grd{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+    .cd{background:var(--s);border-radius:12px;padding:24px;box-shadow:0 4px 6px -1px rgba(0,0,0,.05);border:1px solid var(--b);transition:transform .2s;cursor:pointer;}
+    .cd:hover{transform:translateY(-3px);}
+    .cd-h{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:15px;}
+    .cd-t{font-size:1.1rem;font-weight:600;color:var(--p);}
+    .cd-st{font-size:.9rem;color:var(--tm2);margin-bottom:15px;display:flex;gap:10px;align-items:center;}
+    
+    /* bdg = badge */
+    .bdg{padding:6px 12px;border-radius:20px;font-size:.75rem;font-weight:700;text-transform:uppercase;}
+    .bdg.st{background:var(--stb);color:var(--st);}
+    .bdg.cr{background:var(--crb);color:var(--cr);}
+    .bdg-w{background:var(--wb);color:var(--wbt);padding:4px 8px;border-radius:6px;font-size:.75rem;font-weight:600;}
+
+    /* mo = modal */
+    .mo{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);backdrop-filter:blur(4px);display:flex;justify-content:center;align-items:center;opacity:0;pointer-events:none;transition:.3s;z-index:999;}
+    .mo.v{opacity:1;pointer-events:auto;}
+    .mod{background:var(--s);padding:30px;border-radius:12px;width:400px;max-width:90%;transform:translateY(20px);transition:.3s;}
+    .mo.v .mod{transform:translateY(0);}
+    .mod h2{margin-bottom:20px;color:var(--tm);}
+    .fg{margin-bottom:15px;}
+    .fg label{display:block;margin-bottom:5px;font-size:.9rem;color:var(--tm2);}
+    .fg input,.fg select{width:100%;padding:10px;border:1px solid var(--b);border-radius:6px;outline:none;}
+    .ma{display:flex;gap:10px;justify-content:flex-end;margin-top:20px;}
+    .btn-c{padding:10px 15px;background:#fff;border:1px solid var(--b);border-radius:6px;cursor:pointer;}
+    .btn-s{padding:10px 15px;background:var(--p);color:#fff;border:none;border-radius:6px;cursor:pointer;}
+</style>
 </head>
-
 <body>
-    <div>
-        <div>
-            <ul>
-                <li>
-                    <a href="#">
-                        <span>[Icon: Medical]</span>
-                        <span>Ward Scribe</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>[Icon: Home]</span>
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>[Icon: Ward]</span>
-                        <span>
-                            Ward 
-                            <span>[Icon: Dropdown]</span>
-                        </span>
-                    </a>
-                    <ul>
-                        <li><a href="/general.html"><span>General Ward</span></a></li>
-                        <li><a href="/maternity.html"><span>Maternity Ward</span></a></li>
-                        <li><a href="/icu.html"><span>ICU Ward</span></a></li>
-                        <li><a href="/pae.html"><span>Paediatrics Ward</span></a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>[Icon: Hard Reset]</span>
-                        <span>Hard Reset Wards</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>[Icon: Trash]</span>
-                        <span>Reset All Users</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/about.html">
-                        <span>
-                            [Icon: Help]
-                        </span>
-                        <span>About</span>
-                    </a>
-                </li>
-            </ul>
+
+<div class="sb" id="sb">
+    <div class="sb-h"><h2>🏥 Scribe</h2></div>
+    <ul class="nl">
+        <li onclick="sw('all')" class="act" id="n-all"><span>📋</span><span>All Pts</span></li>
+        <div class="divr"></div>
+        <li onclick="sw('gen')" id="n-gen"><span>🛏️</span><span>Gen</span></li>
+        <li onclick="sw('mat')" id="n-mat"><span>👶</span><span>Mat</span></li>
+        <li onclick="sw('icu')" id="n-icu"><span>🩺</span><span>ICU</span></li>
+    </ul>
+</div>
+
+<div class="mc">
+    <div class="top">
+        <button class="tgl" onclick="tg()">☰</button>
+        <button class="btn-a" onclick="om()">+ Add</button>
+    </div>
+    <div class="dsh">
+        <div class="d-hdr">
+            <div>
+                <h1 id="w-tit">All Patients</h1>
+                <p id="w-sub">Overview of all pts.</p>
+            </div>
         </div>
+        <div class="grd" id="grd"></div>
+    </div>
+</div>
 
-        <div>
-            <div>
-                <div>
-                    [Icon: Menu]
-                </div>
-                
-                <div>
-                    <a href="/index.html">
-                        <div id="dynamic-avatar">
-                            U 
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div>
-                <div>
-                    <div>
-                        <div id="total-reports">0</div>
-                        <div>Total Reports</div>
-                    </div>
-                    <div>[Icon: Eye]</div>
-                </div>
-                <div>
-                    <div>
-                        <div id="total-slots">0</div>
-                        <div>Total Slots Available</div>
-                    </div>
-                    <div>[Icon: Bed]</div>
-                </div>
-            </div>
-
-            <div>
-                <div>
-                    <div>
-                        <h2>Medical Reports</h2>
-                    </div>
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Ward</td>
-                                <td>Patient Name</td>
-                                <td>Age</td>
-                                <td>Status</td>
-                            </tr>
-                        </thead>
-                        <tbody id="recordTableBody">
-                        </tbody>
-                    </table>
-                </div>
-
-                <div>
-                    <div>
-                        <h2>Important Phone Numbers</h2>
-                    </div>
-
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    [Icon: Call]
-                                </td>
-                                <td>
-                                    <h4>Hospitalist On-Call<br> <span>(555) 022-1000</span></h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    [Icon: Call]
-                                </td>
-                                <td>
-                                    <h4>Chief Resident<br> <span>(555) 022-2000</span></h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    [Icon: Call]
-                                </td>
-                                <td>
-                                    <h4>Cardiology Fellow<br> <span>(555) 022-3000</span></h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    [Icon: Call]
-                                </td>
-                                <td>
-                                    <h4>Stroke Team Alert<br> <span>(555) 022-4000</span></h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    [Icon: Call]
-                                </td>
-                                <td>
-                                    <h4>Anesthesia Coordinator<br> <span>(555) 022-5000</span></h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    [Icon: Call]
-                                </td>
-                                <td>
-                                    <h4>Infectious Disease Consult<br> <span>(555) 022-6000</span></h4>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+<div class="mo" id="mo">
+    <div class="mod">
+        <h2 id="m-tit">Add Pt</h2>
+        <div class="fg"><label>Name</label><input type="text" id="p-n"></div>
+        <div class="fg"><label>Ward</label>
+            <select id="p-w">
+                <option value="gen">Gen</option>
+                <option value="mat">Mat</option>
+                <option value="icu">ICU</option>
+            </select>
+        </div>
+        <div class="fg"><label>Cond</label><input type="text" id="p-c"></div>
+        <div class="fg"><label>Status</label>
+            <select id="p-s"><option value="st">Stable</option><option value="cr">Critical</option></select>
+        </div>
+        <div class="ma">
+            <button class="btn-c" onclick="cm()">Cancel</button>
+            <button class="btn-s" onclick="sp()">Save</button>
         </div>
     </div>
-</body>
+</div>
 
-</html>
-</body>
+<script>
+    // lazy db config
+    const db={gen:[{i:1,n:"Arthur Dent",c:"App Recovery",s:"st"},{i:2,n:"Ford Prefect",c:"Concussion",s:"st"}],mat:[{i:3,n:"Trillian",c:"Routine",s:"st"}],icu:[{i:4,n:"Zaphod",c:"Trauma",s:"cr"}]};
+    let cw='all';
+    const dn={gen:'Gen Ward',mat:'Mat Ward',icu:'ICU'};
 
+    // funcs smashed together
+    function tg(){document.getElementById('sb').classList.toggle('c');}
+    
+    function sw(w){cw=w;document.querySelectorAll('.nl li').forEach(l=>l.classList.remove('act'));document.getElementById(`n-${w}`).classList.add('act');
+    document.getElementById('w-tit').innerText=w==='all'?'All Patients':dn[w];
+    document.getElementById('w-sub').innerText=w==='all'?"Overview of all pts.":"Manage pts.";rd();}
+
+    // render func
+    function rd(){
+        let g=document.getElementById('grd');g.innerHTML='';let p=[];
+        if(cw==='all'){for(let k in db)db[k].forEach(x=>p.push({...x,wk:k}));}else{db[cw].forEach(x=>p.push({...x,wk:cw}));}
+        if(!p.length){g.innerHTML=`<p>No pts.</p>`;return;}
+        p.forEach(x=>{
+            let c=document.createElement('div');c.className='cd';
+            c.innerHTML=`<div class="cd-h"><div class="cd-t">${x.n}</div><span class="bdg ${x.s}">${x.s}</span></div>
+            <div class="cd-st"><span>ID: #00${x.i}</span><span class="bdg-w">${dn[x.wk]}</span></div>
+            <div style="font-size:.95rem;"><b>Cond:</b><br>${x.c}</div>`;
+            c.onclick=()=>om(x);g.appendChild(c);
+        });
+    }
+
+    // edit trackers
+    let ei=null,ew=null;
+
+    // open modal
+    function om(p=null){
+        document.getElementById('mo').classList.add('v');
+        if(p){document.getElementById('m-tit').innerText="Edit Pt";document.getElementById('p-n').value=p.n;
+        document.getElementById('p-w').value=p.wk;document.getElementById('p-c').value=p.c;document.getElementById('p-s').value=p.s;ei=p.i;ew=p.wk;}
+        else{document.getElementById('m-tit').innerText="Add Pt";document.getElementById('p-n').value='';
+        document.getElementById('p-w').value=cw==='all'?'gen':cw;document.getElementById('p-c').value='';
+        document.getElementById('p-s').value='st';ei=null;ew=null;}
+    }
+
+    function cm(){document.getElementById('mo').classList.remove('v');}
+
+    // save pt
+    function sp(){
+        let n=document.getElementById('p-n').value,tw=document.getElementById('p-w').value,c=document.getElementById('p-c').value,s=document.getElementById('p-s').value;
+        if(!n||!c)return alert("Fill forms!");
+        if(ei){if(ew!==tw){db[ew]=db[ew].filter(p=>p.i!==ei);db[tw].push({i:ei,n,c,s});}else{let pt=db[tw].find(p=>p.i===ei);pt.n=n;pt.c=c;pt.s=s;}}
+        else{db[tw].push({i:Date.now()%1000,n,c,s});}
+        cm();rd();
+    }
+    rd();
+</script>
+</body>
 </html>
