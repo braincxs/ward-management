@@ -1,5 +1,34 @@
-This is my website to help nurses for ward management. To simply put it, my website help nurse to track patients and I am currently done with the login page. and now I am working on the homepage. 
+# 🚀 WARD MANAGE
+A website to help nurse for patient management
 
-The problems I faced is that the login page. Before this version users have to use a specific user name  and password bacislly a fake login page  password but now user can sign up with their own gmail but they cannot use cross platforms, which means that users have to signup again when using different device.
 
-I will work on the other pages and css and js of the other pages
+## 🔗 Live Links
+https://braincxs.github.io/ward-management/
+
+
+## 📝 Project Overview
+
+This website provide a clean and easy to use interface for nurses to manage patients.
+
+---
+
+## 🛠️ Tech Stack
+The files I use are html, css and javasricpt.
+---
+
+## 🚧 Current Status: Work in Progress
+Here is what is working and what is coming next:
+
+### ✅ What's Working Now
+* [ ] The login page. Users can sign up and sign in your acc but the signuped acc don't work on other devices
+* [ ] 3 pages for nurses to add patients info(Name, what type of ward that they are in, their condition and their status)
+* [ ] A manin page for nurses to see all the patients
+
+### ⏳ Coming Soon (Next Milestones)
+* [ ] Better design for the login page
+* [ ] Replacing the entire homepage to something easier for nurse to see or acceess
+* [ ] Limiting the amount of patients in a ward(a room)
+* [ ]replacing the conditions in the patients info to the 3 main reports that nurse must write(General Medical Report, Specialist Medical Report and Insurance, Legal, or Investigative Medical Report)
+* [ ] Adding ai to help nurses write these reports
+
+---
