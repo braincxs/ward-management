@@ -131,7 +131,7 @@ function resetDatabase() {
     localStorage.removeItem('ward_data_Paediatrics');
 
     alert("Database cleared! Redirecting to login...");
-    window.location.href = "/index.html";
+    window.location.href = "./index.html";
 }
 
 renderTable();
@@ -150,7 +150,7 @@ function hardResetWards() {
     });
 
     alert("Wards have been reset!");
-    window.location.href = "/home.html";
+    window.location.href = "./home.html";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
