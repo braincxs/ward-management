@@ -10,7 +10,7 @@ function setupChatbaseCloseListener() {
         if (window.chatbase && typeof window.chatbase === 'function') {
             window.chatbase("listen", {
                 onClose: () => {
-                    console.log("Chatbox closed - running reset code.");
+                    console.log("Chatbox closed - running reset code.")
                     
                     if (typeof window.chatbase.resetChat === 'function') {
                         window.chatbase.resetChat();
@@ -311,7 +311,7 @@ function resetDatabase() {
         
       
     alert("Database cleared! Redirecting to login...");
-    window.location.href = "/index.html";
+    window.location.href = "./index.html";
     
 }
 
@@ -330,7 +330,7 @@ function hardResetWards() {
     });
 
     alert("Wards have been reset!");
-    window.location.href = "/home.html";
+    window.location.href = "./home.html";
 }
 
 
