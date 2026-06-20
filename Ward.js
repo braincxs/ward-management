@@ -10,7 +10,7 @@ function setupChatbaseCloseListener() {
         if (window.chatbase && typeof window.chatbase === 'function') {
             window.chatbase("listen", {
                 onClose: () => {
-                    console.log("Chatbox closed - running reset code.")
+                    console.log("Chatbox closed - running reset code.");
                     
                     if (typeof window.chatbase.resetChat === 'function') {
                         window.chatbase.resetChat();
