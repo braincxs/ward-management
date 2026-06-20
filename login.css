@@ -110,7 +110,7 @@ body::after {
 .input-wrap {
   position: relative;
 }
-.input-wrap svg {
+.input-wrap > svg {
   position: absolute;
   left: 12px;
   top: 50%;
