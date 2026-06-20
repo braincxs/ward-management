@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Error 404</title>
+    <link rel="stylesheet" href="/home.css">
+ 
+        
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="medical-outline"></ion-icon>
+                        </span>
+                        <span class="title">Ward Scribe</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-btn">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">
+                            Ward 
+                            <ion-icon name="chevron-down-outline" style="margin-left: 8px; font-size: 1.1rem; vertical-align: middle;"></ion-icon>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/general.html"><span class="title">General Ward</span></a></li>
+                        <li><a href="/maternity.html"><span class="title">Maternity Ward</span></a></li>
+                        <li><a href="/icu.html"><span class="title">ICU Ward</span></a></li>
+                        <li><a href="/pae.html"><span class="title">Paediatrics Ward</span></a></li>
+                    
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="hard-reset-link">
+                        <span class="icon">
+                            <ion-icon name="refresh-circle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Hard Reset Wards</span>
+                    </a>
+                </li>                
+                <li>
+                    <a href="#" class="reset-database-link">
+                        <span class="icon">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </span>
+                        <span class="title">Reset All Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about.html">
+                        <span class="icon"> 
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">About</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                
+                <div class="user">
+                    <a href="/index.html" style="text-decoration: none;">
+                        <div id="dynamic-avatar" style="
+                            width: 40px; 
+                            height: 40px; 
+                            border-radius: 50%; 
+                            background-color: #2a2185; 
+                            color: white; 
+                            display: flex; 
+                            align-items: center; 
+                            justify-content: center; 
+                            font-size: 1.2rem; 
+                            font-weight: bold;
+                            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                        ">
+                            U </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers" id="total-reports">0</div>
+                        <div class="cardName">Total Reports</div>
+                    </div>
+                    <div class="iconBx"><ion-icon name="eye-outline"></ion-icon></div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers" id="total-slots">0</div>
+                        <div class="cardName">Total Slots Available</div>
+                    </div>
+                    <div class="iconBx"><ion-icon name="bed-outline"></ion-icon></div>
+                </div>
+            </div>
+
+    
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Medical Reports</h2>
+        
+                    </div>
+
+                
+
+                    <table style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <td style="width: 15%; text-align: center;">Ward</td>
+                                <td style="width: 20%; text-align: left;">Patient Name</td>
+                                <td style="width: 10%; text-align: center;">Age</td>
+                                
+                                <td style="width: 15%; text-align: center;">Status</td>
+                            </tr>
+                        </thead>
+                        <tbody id="recordTableBody">
+                            </tbody>
+                    </table>
+                </div>
+
+                <div class="recentCustomers">
+                    <div class="cardHeader">
+                        <h2>Important Phone Numbers</h2>
+                    </div>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td width="60px" style="text-align: center; font-size: 2.5rem; color: #888;">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                </td>
+                                <td>
+                                    <h4>Hospitalist On-Call<br> <span>(555) 022-1000</span></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="60px" style="text-align: center; font-size: 2.5rem; color: #888;">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                </td>
+                                <td>
+                                    <h4>Chief Resident<br> <span>(555) 022-2000</span></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="60px" style="text-align: center; font-size: 2.5rem; color: #888;">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                </td>
+                                <td>
+                                    <h4>Cardiology Fellow<br> <span>(555) 022-3000</span></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="60px" style="text-align: center; font-size: 2.5rem; color: #888;">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                </td>
+                                <td>
+                                    <h4>Stroke Team Alert<br> <span>(555) 022-4000</span></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="60px" style="text-align: center; font-size: 2.5rem; color: #888;">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                </td>
+                                <td>
+                                    <h4>Anesthesia Coordinator<br> <span>(555) 022-5000</span></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="60px" style="text-align: center; font-size: 2.5rem; color: #888;">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                </td>
+                                <td>
+                                    <h4>Infectious Disease Consult<br> <span>(555) 022-6000</span></h4>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/home.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
